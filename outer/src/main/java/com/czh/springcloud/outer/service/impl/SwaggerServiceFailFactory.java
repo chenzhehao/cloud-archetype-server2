@@ -1,6 +1,7 @@
 package com.czh.springcloud.outer.service.impl;
 
 import com.czh.cloud.common.entity.RootResponse;
+import com.czh.cloud.common.entity.RootResultCode;
 import com.czh.springcloud.outer.service.ISwaggerServiceClient;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
@@ -19,9 +20,7 @@ public class SwaggerServiceFailFactory implements FallbackFactory<ISwaggerServic
 
     @Override
     public ISwaggerServiceClient create(Throwable cause) {
-        RootResponse response = new RootResponse<String>();
-//        response.setCode(PicaResultCode.INTERFACE_INVOKE_ERROR.code());
-//        response.setMessage(PicaResultCode.INTERFACE_INVOKE_ERROR.message());
+        RootResponse response = new RootResponse<String>(RootResultCode.SYSTEM_INNER_BUSY);
 
         return new ISwaggerServiceClient() {
             @Override

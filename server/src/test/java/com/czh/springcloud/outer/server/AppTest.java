@@ -1,4 +1,4 @@
-package com.czh.springcloud;
+package com.czh.springcloud.outer.server;
 
 import static org.junit.Assert.assertTrue;
 

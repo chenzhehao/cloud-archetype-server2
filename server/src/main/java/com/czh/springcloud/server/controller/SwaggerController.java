@@ -1,11 +1,14 @@
-package com.czh.springcloud.controller;
+package com.czh.springcloud.server.controller;
 
 import com.czh.cloud.common.controller.RootController;
 import com.czh.cloud.common.entity.RootResponse;
 import com.czh.springcloud.outer.entity.request.SwaggerReq;
 import com.czh.springcloud.outer.entity.response.SwaggerRep;
 import com.czh.springcloud.outer.util.SwaggerServiceUtil;
+import com.czh.springcloud.server.dao.PDoctor;
+import com.czh.springcloud.server.mapper.PDoctorMapper;
 import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,6 +22,9 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "swagger", description = "swagger controller接口样例")
 public class SwaggerController extends RootController {
 
+    @Autowired
+    PDoctorMapper doctorMapper;
+
     @ApiOperation(value = "test1测试接口功能描述", response = String.class, notes = "此处描述的返回对象为data内容，外层有code和message")
     @RequestMapping(value = "/v1/test1", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public RootResponse<String> v1GetTest1() {
@@ -29,7 +35,7 @@ public class SwaggerController extends RootController {
     @RequestMapping(value = "/v1/test2", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public RootResponse<String> v1GetTest2() {
         RootResponse<String> response = RootResponse.instance();
-        response.setData("yes");
+        response.setData(doctorMapper.selectByPrimaryKey(1384).getName());
         return response;
     }
 
