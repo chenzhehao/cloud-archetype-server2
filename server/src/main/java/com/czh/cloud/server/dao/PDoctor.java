@@ -1,4 +1,4 @@
-package com.czh.springcloud.server.dao;
+package com.czh.cloud.server.dao;
 
 import java.util.Date;
 

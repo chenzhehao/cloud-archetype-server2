@@ -1,12 +1,11 @@
-package com.czh.springcloud.server.controller;
+package com.czh.cloud.server.controller;
 
 import com.czh.cloud.common.controller.RootController;
 import com.czh.cloud.common.entity.RootResponse;
-import com.czh.springcloud.outer.entity.request.SwaggerReq;
-import com.czh.springcloud.outer.entity.response.SwaggerRep;
-import com.czh.springcloud.outer.util.SwaggerServiceUtil;
-import com.czh.springcloud.server.dao.PDoctor;
-import com.czh.springcloud.server.mapper.PDoctorMapper;
+import com.czh.cloud.outer.entity.request.SwaggerReq;
+import com.czh.cloud.outer.entity.response.SwaggerRep;
+import com.czh.cloud.outer.util.SwaggerServiceUtil;
+import com.czh.cloud.server.mapper.PDoctorMapper;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

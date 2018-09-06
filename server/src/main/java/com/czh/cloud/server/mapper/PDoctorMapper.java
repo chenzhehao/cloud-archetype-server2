@@ -1,6 +1,6 @@
-package com.czh.springcloud.server.mapper;
+package com.czh.cloud.server.mapper;
 
-import com.czh.springcloud.server.dao.PDoctor;
+import com.czh.cloud.server.dao.PDoctor;
 
 public interface PDoctorMapper {
     int deleteByPrimaryKey(Integer id);

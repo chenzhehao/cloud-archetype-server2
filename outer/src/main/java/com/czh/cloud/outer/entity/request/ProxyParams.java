@@ -1,4 +1,4 @@
-package com.czh.springcloud.outer.entity.request;
+package com.czh.cloud.outer.entity.request;
 
 import java.util.HashMap;
 

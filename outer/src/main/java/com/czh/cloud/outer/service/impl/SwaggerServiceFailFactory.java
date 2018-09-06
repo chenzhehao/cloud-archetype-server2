@@ -1,8 +1,8 @@
-package com.czh.springcloud.outer.service.impl;
+package com.czh.cloud.outer.service.impl;
 
 import com.czh.cloud.common.entity.RootResponse;
 import com.czh.cloud.common.entity.RootResultCode;
-import com.czh.springcloud.outer.service.ISwaggerServiceClient;
+import com.czh.cloud.outer.service.ISwaggerServiceClient;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
-package com.czh.springcloud.outer.service;
+package com.czh.cloud.outer.service;
 
 import com.czh.cloud.common.entity.RootResponse;
-import com.czh.springcloud.outer.service.impl.SwaggerServiceFailFactory;
+import com.czh.cloud.outer.service.impl.SwaggerServiceFailFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

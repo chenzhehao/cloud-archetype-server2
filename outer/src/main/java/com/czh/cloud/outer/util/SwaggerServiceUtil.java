@@ -1,9 +1,9 @@
-package com.czh.springcloud.outer.util;
+package com.czh.cloud.outer.util;
 
 import com.czh.cloud.common.entity.RootException;
 import com.czh.cloud.common.entity.RootResponse;
 import com.czh.cloud.common.entity.RootResultCode;
-import com.czh.springcloud.outer.service.ISwaggerServiceClient;
+import com.czh.cloud.outer.service.ISwaggerServiceClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +27,18 @@ public class SwaggerServiceUtil {
     }
 
     public static RootResponse<String> v1GetTest2() {
+        RootResponse<String> response;
         try {
             logger.info("调用swagger访问外部系统get params：");
-            RootResponse<String> response = swaggerServiceClient.v1GetTest2();
+            response = swaggerServiceClient.v1GetTest2();
             logger.info("调用swagger访问外部系统get response：" + response);
-            if (!RootResultCode.SUCCESS.code().equals(response.getCode())) {
-                throw new RootException(response.getCode(), response.getMessage());
-            }
-            return response;
         } catch (Exception e) {
             throw new RootException(RootResultCode.SYSTEM_INNER_BUSY.code(), e.getMessage());
         }
+        if (!RootResultCode.SUCCESS.code().equals(response.getCode())) {
+            throw new RootException(response.getCode(), response.getMessage());
+        }
+        return response;
+
     }
 }
