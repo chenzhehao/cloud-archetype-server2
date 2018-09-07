@@ -1,9 +1,9 @@
-package com.czh.cloud.outer.util;
+package com.czh.cloud.archetype.outer.util;
 
 import com.czh.cloud.common.entity.RootException;
 import com.czh.cloud.common.entity.RootResponse;
 import com.czh.cloud.common.entity.RootResultCode;
-import com.czh.cloud.outer.service.ISwaggerServiceClient;
+import com.czh.cloud.archetype.outer.service.ISwaggerServiceClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
