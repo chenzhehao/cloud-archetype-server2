@@ -1,12 +1,14 @@
 package com.czh.cloud.archetype.server.controller;
 
-import com.czh.cloud.common.controller.RootController;
-import com.czh.cloud.common.entity.RootResponse;
 import com.czh.cloud.archetype.outer.entity.request.SwaggerReq;
 import com.czh.cloud.archetype.outer.entity.response.SwaggerRep;
 import com.czh.cloud.archetype.outer.util.SwaggerServiceUtil;
 import com.czh.cloud.archetype.server.mapper.PDoctorMapper;
+import com.czh.cloud.common.controller.RootController;
+import com.czh.cloud.common.entity.RootResponse;
 import io.swagger.annotations.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/swagger")
 @Api(value = "swagger", description = "swagger controller接口样例")
 public class SwaggerController extends RootController {
+    public static final Logger logger = LoggerFactory.getLogger(SwaggerController.class);
 
     @Autowired
     PDoctorMapper doctorMapper;

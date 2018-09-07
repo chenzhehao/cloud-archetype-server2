@@ -1,4 +1,4 @@
-package com.czh.cloud.archetype;
+package com.czh.cloud.archetype.server;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableCircuitBreaker
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.czh.cloud")
 @EnableSwagger2
 @SpringBootApplication(scanBasePackages = "com.czh.cloud")
 @MapperScan("com.czh.cloud.archetype.server.mapper")
