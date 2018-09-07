@@ -23,7 +23,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <finalName>cloud-archetype-server2-outer</finalName>
-    </build>
 </project>

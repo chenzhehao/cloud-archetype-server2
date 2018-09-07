@@ -37,7 +37,6 @@
     </dependencies>
 
     <build>
-        <finalName>cloud-archetype-server2</finalName>
         <plugins>
             <plugin><!-- 使用Spring-Boot-tarter-parent pom,只需要添加该插件而无需配置,Maven插件，它可以将项目打包成一个可执行jar/war -->
                 <groupId>org.springframework.boot</groupId>
