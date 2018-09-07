@@ -1,4 +1,4 @@
-package com.czh.cloud.server.dao;
+package com.czh.cloud.archetype.server.dao;
 
 import java.util.Date;
 

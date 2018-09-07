@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.czh.cloud.server.mapper.PDoctorMapper" >
-  <resultMap id="BaseResultMap" type="com.czh.cloud.server.dao.PDoctor" >
+<mapper namespace="com.czh.cloud.archetype.server.mapper.PDoctorMapper" >
+  <resultMap id="BaseResultMap" type="com.czh.cloud.archetype.server.dao.PDoctor" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="sex" property="sex" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -81,7 +81,7 @@
     delete from p_doctor
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.czh.cloud.server.dao.PDoctor" >
+  <insert id="insert" parameterType="com.czh.cloud.archetype.server.dao.PDoctor" >
     insert into p_doctor (id, sex, name, 
       mobile_phone, status, type, 
       hospital_id, department_id, title_id, 
@@ -123,7 +123,7 @@
       #{firstLoginTime,jdbcType=TIMESTAMP}, #{card,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
       #{showFlag,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.czh.cloud.server.dao.PDoctor" >
+  <insert id="insertSelective" parameterType="com.czh.cloud.archetype.server.dao.PDoctor" >
     insert into p_doctor
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -478,7 +478,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.czh.cloud.server.dao.PDoctor" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.czh.cloud.archetype.server.dao.PDoctor" >
     update p_doctor
     <set >
       <if test="sex != null" >
@@ -655,7 +655,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.czh.cloud.server.dao.PDoctor" >
+  <update id="updateByPrimaryKey" parameterType="com.czh.cloud.archetype.server.dao.PDoctor" >
     update p_doctor
     set sex = #{sex,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},

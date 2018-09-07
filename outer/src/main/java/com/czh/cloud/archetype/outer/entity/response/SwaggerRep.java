@@ -1,4 +1,4 @@
-package com.czh.cloud.outer.entity.request;
+package com.czh.cloud.archetype.outer.entity.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -7,14 +7,14 @@ import io.swagger.annotations.ApiModelProperty;
  * @author: zhehao.chen
  * @version: V1.0
  * @Description:
- * @date: 2018/9/5 11:24
+ * @date: 2018/9/5 11:25
  */
-@ApiModel(value = "SwaggerReq对象", description = "样例对象")
-public class SwaggerReq {
+@ApiModel(value = "SwaggerRep对象", description = "样例对象")
+public class SwaggerRep {
 
-    @ApiModelProperty(name = "req1", value = "请求参数1", example = "123")
+    @ApiModelProperty(name = "rep1", value = "返回参数1", example = "123")
     public Integer req1;
-    @ApiModelProperty(name = "req2", value = "请求参数2", example = "abc")
+    @ApiModelProperty(name = "rep2", value = "返回参数2", example = "abc")
     public String req2;
 
     public Integer getReq1() {

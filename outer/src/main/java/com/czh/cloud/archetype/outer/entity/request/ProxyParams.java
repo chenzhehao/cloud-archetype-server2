@@ -1,4 +1,4 @@
-package com.czh.cloud.outer.entity.request;
+package com.czh.cloud.archetype.outer.entity.request;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
-package com.czh.cloud.server.mapper;
+package com.czh.cloud.archetype.server.mapper;
 
-import com.czh.cloud.server.dao.PDoctor;
+import com.czh.cloud.archetype.server.dao.PDoctor;
 
 public interface PDoctorMapper {
     int deleteByPrimaryKey(Integer id);
