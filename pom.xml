@@ -11,7 +11,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.czh.cloud</groupId>
+    <groupId>com.czh.cloud.archetype</groupId>
     <artifactId>cloud-archetype-server2</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
