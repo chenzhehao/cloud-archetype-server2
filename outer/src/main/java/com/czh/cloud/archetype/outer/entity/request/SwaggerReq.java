@@ -2,6 +2,7 @@ package com.czh.cloud.archetype.outer.entity.request;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * @author: zhehao.chen
@@ -14,7 +15,9 @@ public class SwaggerReq {
 
     @ApiModelProperty(name = "req1", value = "请求参数1", example = "123")
     public Integer req1;
+
     @ApiModelProperty(name = "req2", value = "请求参数2", example = "abc")
+    @Length(min = 5, max = 20)
     public String req2;
 
     public Integer getReq1() {

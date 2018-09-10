@@ -10,7 +10,10 @@ import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author: zhehao.chen
@@ -38,6 +41,22 @@ public class SwaggerController extends RootController {
     public RootResponse<String> v1GetTest2() {
         RootResponse<String> response = RootResponse.instance();
         response.setData(doctorMapper.selectByPrimaryKey(1384).getName());
+        return response;
+    }
+
+    @ApiOperation(value = "post接口功能描述", response = SwaggerRep.class, notes = "此处描述的返回对象为data内容，外层有code和message")
+    @ApiImplicitParams({@ApiImplicitParam(paramType = "header", dataType = "String", name = "token", value = "用户token值", required = true),
+            @ApiImplicitParam(paramType = "path", dataType = "Long", name = "type", value = "类型", required = true)})
+    @RequestMapping(value = "/v1/test3/{type}", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public RootResponse<SwaggerRep> v1PostTest1(@RequestHeader(value = "token") String token,
+                                                @PathVariable Integer type,
+                                                @Valid @RequestBody SwaggerReq swaggerReq,
+                                                final BindingResult bindingResult) {
+        SwaggerRep rep = new SwaggerRep();
+        rep.setReq1(swaggerReq.getReq1());
+        rep.setReq2(swaggerReq.getReq2());
+        RootResponse<SwaggerRep> response = RootResponse.instance();
+        response.setData(rep);
         return response;
     }
 
