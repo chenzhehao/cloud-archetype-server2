@@ -1,5 +1,6 @@
 package com.czh.cloud.archetype.outer.entity.request;
 
+import com.czh.cloud.common.entity.RootReq;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.Length;
@@ -11,7 +12,7 @@ import org.hibernate.validator.constraints.Length;
  * @date: 2018/9/5 11:24
  */
 @ApiModel(value = "SwaggerReq对象", description = "样例对象")
-public class SwaggerReq {
+public class SwaggerReq extends RootReq {
 
     @ApiModelProperty(name = "req1", value = "请求参数1", example = "123")
     public Integer req1;

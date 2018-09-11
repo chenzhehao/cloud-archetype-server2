@@ -1,5 +1,6 @@
 package com.czh.cloud.archetype.outer.entity.response;
 
+import com.czh.cloud.common.entity.RootRep;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -10,7 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @date: 2018/9/5 11:25
  */
 @ApiModel(value = "SwaggerRep对象", description = "样例对象")
-public class SwaggerRep {
+public class SwaggerRep extends RootRep {
 
     @ApiModelProperty(name = "rep1", value = "返回参数1", example = "123")
     public Integer req1;

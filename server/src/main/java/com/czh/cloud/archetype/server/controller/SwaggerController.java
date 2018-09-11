@@ -30,6 +30,15 @@ public class SwaggerController extends RootController {
     @Autowired
     PDoctorMapper doctorMapper;
 
+    @ApiOperation(value = "test0测试接口功能描述", response = String.class, notes = "此处描述的返回对象为data内容，外层有code和message")
+    @RequestMapping(value = "/v1/test0", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    public RootResponse<SwaggerRep> v1GetTest0() {
+        SwaggerReq swaggerReq = new SwaggerReq();
+        swaggerReq.setReq1(11111);
+        swaggerReq.setReq2("aaaaaa");
+        return SwaggerServiceUtil.v1PostTest1("token11111", 22222, swaggerReq);
+    }
+
     @ApiOperation(value = "test1测试接口功能描述", response = String.class, notes = "此处描述的返回对象为data内容，外层有code和message")
     @RequestMapping(value = "/v1/test1", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public RootResponse<String> v1GetTest1() {
@@ -52,6 +61,7 @@ public class SwaggerController extends RootController {
                                                 @PathVariable Integer type,
                                                 @Valid @RequestBody SwaggerReq swaggerReq,
                                                 final BindingResult bindingResult) {
+        logger.info("token=" + token + " type=" + type);
         SwaggerRep rep = new SwaggerRep();
         rep.setReq1(swaggerReq.getReq1());
         rep.setReq2(swaggerReq.getReq2());

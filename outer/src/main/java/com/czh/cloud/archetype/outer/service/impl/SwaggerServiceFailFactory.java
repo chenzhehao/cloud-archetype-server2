@@ -1,5 +1,7 @@
 package com.czh.cloud.archetype.outer.service.impl;
 
+import com.czh.cloud.archetype.outer.entity.request.SwaggerReq;
+import com.czh.cloud.archetype.outer.entity.response.SwaggerRep;
 import com.czh.cloud.archetype.outer.service.ISwaggerServiceClient;
 import com.czh.cloud.common.entity.RootResponse;
 import com.czh.cloud.common.entity.RootResultCode;
@@ -26,6 +28,12 @@ public class SwaggerServiceFailFactory implements FallbackFactory<ISwaggerServic
             @Override
             public RootResponse<String> v1GetTest2() {
                 logger.error("service:ISwaggerServiceClient interface:get 触发熔断机制", cause);
+                return response;
+            }
+
+            @Override
+            public RootResponse<SwaggerRep> v1PostTest1(String token, Integer type, SwaggerReq swaggerReq) {
+                logger.error("service:ISwaggerServiceClient interface:v1PostTest1 触发熔断机制", cause);
                 return response;
             }
         };
