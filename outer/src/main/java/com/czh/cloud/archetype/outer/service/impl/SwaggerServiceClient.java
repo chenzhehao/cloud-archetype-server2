@@ -24,7 +24,7 @@ public class SwaggerServiceClient {
     @Autowired
     private ISwaggerServiceClient swaggerServiceClient;
 
-    @HystrixCommand(fallbackMethod = "myFallback")
+    @HystrixCommand(fallbackMethod = "myFallback", threadPoolKey = "queryThreadPoolKey", groupKey = "queryGroupKey", commandKey = "queryCommandKey")
     public RootResponse<SwaggerRep> v1PostTest1(String token, Integer type, SwaggerReq swaggerReq) {
         logger.info("HystrixCommand独立线程");
         return swaggerServiceClient.v1PostTest1(token, type, swaggerReq);

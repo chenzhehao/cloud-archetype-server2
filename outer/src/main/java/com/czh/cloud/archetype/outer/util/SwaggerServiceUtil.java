@@ -53,7 +53,6 @@ public class SwaggerServiceUtil {
             throw new RootException(response.getCode(), response.getMessage());
         }
         return response;
-
     }
 
     /**
