@@ -23,15 +23,15 @@ public class ThreadConfig {
     public TaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //设置核心线程数
-        executor.setCorePoolSize(5);
+        executor.setCorePoolSize(20);
         //设置最大线程数
-        executor.setMaxPoolSize(5);
+        executor.setMaxPoolSize(500);
         //设置队列容量
-        executor.setQueueCapacity(10);
+        executor.setQueueCapacity(1000);
         //设置线程活跃时间（秒）
         executor.setKeepAliveSeconds(60);
         //设置默认线程名称
-        executor.setThreadNamePrefix("hello-");
+        executor.setThreadNamePrefix("self-taskExecutor-");
         //允许核心线程超时
         executor.setAllowCoreThreadTimeOut(false);
         //设置拒绝策略

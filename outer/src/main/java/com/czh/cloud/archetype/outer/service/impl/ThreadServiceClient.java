@@ -36,7 +36,7 @@ public class ThreadServiceClient {
      */
     RootResponse<String> myFallback(Throwable cause) {
         RootResponse response = new RootResponse<String>(RootResultCode.SYSTEM_INNER_BUSY);
-        logger.error("service:ThreadServiceClient interface:v1GetTest3 触发熔断机制");
+        logger.error("service:ThreadServiceClient interface:v1GetTest3 触发熔断机制", cause);
         return response;
     }
 
