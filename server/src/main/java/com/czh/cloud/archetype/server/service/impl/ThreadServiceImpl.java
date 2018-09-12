@@ -33,7 +33,7 @@ public class ThreadServiceImpl implements IThreadService {
     @Async
     public Future<String> threadTest1() throws InterruptedException {
         logger.info("异步线程测试(带返回值)");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         return new AsyncResult<String>("异步线程测试(带返回值)");
     }
 
@@ -45,7 +45,7 @@ public class ThreadServiceImpl implements IThreadService {
     @Override
     public String threadTest3() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
