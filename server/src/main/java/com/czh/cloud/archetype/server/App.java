@@ -33,6 +33,14 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
+    /**
+     * 功能描述: hystrix配置入口信息
+     * @author: zhehao.chen
+     * @version: V1.0
+     * @date: 2018/9/13 13:33
+     * @param: []
+     * @return: org.springframework.boot.web.servlet.ServletRegistrationBean
+     */
     @Bean
     public ServletRegistrationBean getServlet() {
         HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
