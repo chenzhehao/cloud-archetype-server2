@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/archetype2/swagger", headers = {"sysCode=33333", "sysCode2=44444"}, produces = "application/json;charset=UTF-8")
 public interface ISwaggerServiceClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/v1/test2")
+    @RequestMapping(value = "/v1/test2", method = RequestMethod.GET)
     RootResponse<String> v1GetTest2();
 
     @RequestMapping(value = "/v1/test3/{type}", headers = "token1=token22222", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
