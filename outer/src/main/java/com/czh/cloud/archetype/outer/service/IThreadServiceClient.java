@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Description:
  * @date: 2018/9/11 17:17
  */
-@FeignClient(value = "10030-czh-archetype2")//命令模式使用
+@FeignClient(value = "czh-archetype2")//命令模式使用
 @RequestMapping(value = "/archetype2/thread", headers = {"sysCode=33333", "sysCode2=44444"}, produces = "application/json;charset=UTF-8")
 public interface IThreadServiceClient {
 
